@@ -14,8 +14,21 @@ services:
     ports:
       - "0:8080"
 
+  svc-tina:
+    image: tina237/cali-service:v1
+    environment:
+      STUDENT_NAME: Valentina Nitola
+      HOOD: Ciudad Jardin
+    networks:
+      - ciudad-jardin
+    volumes:
+      - biblioteca-del-pueblo:/var/log/app
+    ports:
+      - "0:8080"
+
 networks:
   los-alcazares:
+  ciudad-jardin:
 
 volumes:
   biblioteca-del-pueblo:
